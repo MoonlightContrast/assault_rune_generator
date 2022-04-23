@@ -6,6 +6,10 @@ Assault rune generatorは任意の2つのルーン文字を合成し
 Assault rune generatorはブラウザ上で動作します。
 またファイル一式が揃っていればオフライン上でも動作するようになっています。
 
+![ツールイメージ](https://user-images.githubusercontent.com/104244693/164890186-2a29cfc6-b14d-4768-ae71-abd4df91365e.jpeg)
+
+![生成ルーン](https://user-images.githubusercontent.com/104244693/164890184-d29247be-0eba-45ed-acef-437db17b114b.png)
+
 # Requirement
 ある程度最新のブラウザであれば動作するはずです。
 
@@ -35,7 +39,8 @@ Assault rune generatorはブラウザ上で動作します。
 |Left|例えばCEN2+URのように合成結果が左側に寄ってしまう組み合わせの合成結果を中央に表示するための設定|
 |Right|Leftの逆で合成結果が右側に寄ってしまう組み合わせを中央に表示するための設定|
 
-各項目を設定しGenerateボタンを押すことで画像を生成することができます。
+各項目を設定しGenerateボタンを押すことで画像を生成することができ
+生成された画像を右クリックして「名前をつけて保存」にて保存することができます。
 
 # Note
 非公式ルーンは形状が確定しておりませんので
