@@ -56,7 +56,7 @@
         
         <h2>Rune1</h2>
         <label class="param" for="rune1">Rune1:</label>
-        <select id="rune1">
+        <select id="rune1" onchange="onchange_input();">
             <option value="A0"   class="official_rune"           >ᚠ:FEOH</option>
             <option value="A2"   class="official_rune"           >ᚢ:UR</option>
             <option value="A3"   class="unofficial_rune"         >ᚣ:YR&lt;Unofficial&gt;</option>
@@ -99,16 +99,16 @@
         </select><br>
         
         <label class="param" for="rune1color">Color:</label>
-        <input id="rune1color" type="color" value="#00ffff"><br>
+        <input id="rune1color" type="color" value="#00ffff" onchange="onchange_input();"><br>
 
         <label class="param" for="chkRune1Mirror">Mirror:</label>
-        <input id="chkRune1Mirror" type="checkbox"><br>
+        <input id="chkRune1Mirror" type="checkbox" onchange="onchange_input();"><br>
 
         <hr>
         
         <h2>Rune2</h2>
         <label class="param" for="rune2">Rune2:</label>
-        <select id="rune2">
+        <select id="rune2" onchange="onchange_input();">
             <option value="A0"   class="official_rune"           >ᚠ:FEOH</option>
             <option value="A2"   class="official_rune"           >ᚢ:UR</option>
             <option value="A3"   class="unofficial_rune"         >ᚣ:YR&lt;Unofficial&gt;</option>
@@ -151,21 +151,21 @@
         </select><br>
         
         <label class="param" for="rune2color">Color:</label>
-        <input id="rune2color" type="color" value="#ff00ff"><br>
+        <input id="rune2color" type="color" value="#ff00ff" onchange="onchange_input();"><br>
 
         <label class="param" for="chkRune2Mirror">Mirror:</label>
-        <input id="chkRune2Mirror" type="checkbox"><br>
+        <input id="chkRune2Mirror" type="checkbox" onchange="onchange_input();"><br>
         <hr>
         
         <h2>Background</h2>
         <label class="param" for="bgcolor">Color:</label>
-        <input id="bgcolor" type="color" value="#191970"><br>
+        <input id="bgcolor" type="color" value="#191970" onchange="onchange_input();"><br>
 
         <label class="param" for="lapcolor">Lap. color:</label>
-        <input id="lapcolor" type="color" value="#FFFFFF"><br>
+        <input id="lapcolor" type="color" value="#FFFFFF" onchange="onchange_input();"><br>
 
         <label class="param" for="imgSize">Size(px):</label>
-        <input id="imgSize" type="number" value="300">px<br>
+        <input id="imgSize" type="number" value="300" min="50" max="1000" onchange="onchange_input();">px<br>
 
         <label class="param" for="chkRealtime">Real time:</label>
         <input id="chkRealtime" type="checkbox" checked="checked"><br>
@@ -176,9 +176,9 @@
         <br>
         
         <h2>Horizontal Position</h2>
-        <input id="radHPosCenter" type="radio" name="radHPos" checked="checked"><label class="param" for="radHPosCenter">Center</label>　
-        <input id="radHPosLeft"   type="radio" name="radHPos">                  <label class="param" for="radHPosLeft"  >Left</label>　
-        <input id="radHPosRight"  type="radio" name="radHPos">                  <label class="param" for="radHPosRight" >Right</label>  
+        <input id="radHPosCenter" type="radio" name="radHPos" onchange="onchange_input();" checked="checked"><label class="param" for="radHPosCenter">Center</label>　
+        <input id="radHPosLeft"   type="radio" name="radHPos" onchange="onchange_input();">                  <label class="param" for="radHPosLeft"  >Left</label>　
+        <input id="radHPosRight"  type="radio" name="radHPos" onchange="onchange_input();">                  <label class="param" for="radHPosRight" >Right</label>  
 
         <hr>
         <br>

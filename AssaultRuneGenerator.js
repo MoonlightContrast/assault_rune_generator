@@ -182,3 +182,16 @@ const chkShowUnofficial = function() {
         }
     });
 };
+
+/** リアルタイム変更イベント */
+const onchange_input = function() {
+    
+    // Real time無効の場合何も実行しない
+    const chkShowUnofficial = document.getElementById('chkRealtime').checked;
+    if (!chkShowUnofficial) {
+        return;
+    }  
+
+    // Real time有効の場合 Generate実行
+    generate_onclick();
+};
