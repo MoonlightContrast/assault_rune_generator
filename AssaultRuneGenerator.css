@@ -1,0 +1,42 @@
+/* Selectの設定 */
+select {
+    font-size:3em;
+}
+
+/* Input numberの設定 */
+input[type=number] {
+    font-size:2em;
+}
+
+/* Input checkboxの設定 */
+input[type=checkbox] {
+    width:3em;
+    height:3em;
+}
+
+/* Input colorの設定 */
+input[type=color] {
+    width:8em;
+    height:3em;
+}
+
+/* Input checkedの設定 */
+input[type=radio] {
+    width:2em;
+    height:2em;
+}
+
+/* 見出し */
+.param {
+    font-size:2em;
+}
+
+/* ボタンサイズ */
+input[type=button] {
+    font-size:2em;
+}
+
+/* 非公式ルーン */
+.unofficial_rune {
+    display:none;
+}

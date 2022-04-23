@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <link href="AssaultRuneGenerator.css" rel="stylesheet">
+        <script src="AssaultRuneGenerator.js"></script>
+        
+        <title>Assault Rune Generator</title>
+    </head>
+    <body>
+        
+        <!-- ルーン文字SVG -->
+        <div style="display:none;">
+            <img id="SVG_A0"   type="image/svg+xml" src="rune_svg/A0.svg"  ></img>
+            <img id="SVG_A2"   type="image/svg+xml" src="rune_svg/A2.svg"  ></img>
+            <img id="SVG_A3"   type="image/svg+xml" src="rune_svg/A3.svg"  ></img>
+            <img id="SVG_A6"   type="image/svg+xml" src="rune_svg/A6.svg"  ></img>
+            <img id="SVG_A8"   type="image/svg+xml" src="rune_svg/A8.svg"  ></img>
+            <img id="SVG_A9"   type="image/svg+xml" src="rune_svg/A9.svg"  ></img>
+            <img id="SVG_AA"   type="image/svg+xml" src="rune_svg/AA.svg"  ></img>
+            <img id="SVG_B1"   type="image/svg+xml" src="rune_svg/B1.svg"  ></img>
+            <img id="SVG_B2"   type="image/svg+xml" src="rune_svg/B2.svg"  ></img>
+            <img id="SVG_B3"   type="image/svg+xml" src="rune_svg/B3.svg"  ></img>
+            <img id="SVG_B3_2" type="image/svg+xml" src="rune_svg/B3_2.svg"></img>
+            <img id="SVG_B7"   type="image/svg+xml" src="rune_svg/B7.svg"  ></img>
+            <img id="SVG_B8"   type="image/svg+xml" src="rune_svg/B8.svg"  ></img>
+            <img id="SVG_B9"   type="image/svg+xml" src="rune_svg/B9.svg"  ></img>
+            <img id="SVG_BB"   type="image/svg+xml" src="rune_svg/BB.svg"  ></img>
+            <img id="SVG_BB_2" type="image/svg+xml" src="rune_svg/BB_2.svg"></img>
+            <img id="SVG_BE"   type="image/svg+xml" src="rune_svg/BE.svg"  ></img>
+            <img id="SVG_C1"   type="image/svg+xml" src="rune_svg/C1.svg"  ></img>
+            <img id="SVG_C4"   type="image/svg+xml" src="rune_svg/C4.svg"  ></img>
+            <img id="SVG_C7"   type="image/svg+xml" src="rune_svg/C7.svg"  ></img>
+            <img id="SVG_C8"   type="image/svg+xml" src="rune_svg/C8.svg"  ></img>
+            <img id="SVG_C9"   type="image/svg+xml" src="rune_svg/C9.svg"  ></img>
+            <img id="SVG_CB"   type="image/svg+xml" src="rune_svg/CB.svg"  ></img>
+            <img id="SVG_CB_2" type="image/svg+xml" src="rune_svg/CB_2.svg"></img>
+            <img id="SVG_CF"   type="image/svg+xml" src="rune_svg/CF.svg"  ></img>
+            <img id="SVG_D2"   type="image/svg+xml" src="rune_svg/D2.svg"  ></img>
+            <img id="SVG_D6"   type="image/svg+xml" src="rune_svg/D6.svg"  ></img>
+            <img id="SVG_D7"   type="image/svg+xml" src="rune_svg/D7.svg"  ></img>
+            <img id="SVG_DA"   type="image/svg+xml" src="rune_svg/DA.svg"  ></img>
+            <img id="SVG_DD"   type="image/svg+xml" src="rune_svg/DD.svg"  ></img>
+            <img id="SVG_DE"   type="image/svg+xml" src="rune_svg/DE.svg"  ></img>
+            <img id="SVG_DF"   type="image/svg+xml" src="rune_svg/DF.svg"  ></img>
+            <img id="SVG_E0"   type="image/svg+xml" src="rune_svg/E0.svg"  ></img>
+            <img id="SVG_E1"   type="image/svg+xml" src="rune_svg/E1.svg"  ></img>
+            <img id="SVG_E2"   type="image/svg+xml" src="rune_svg/E2.svg"  ></img>
+            <img id="SVG_E3"   type="image/svg+xml" src="rune_svg/E3.svg"  ></img>
+            <img id="SVG_E4"   type="image/svg+xml" src="rune_svg/E4.svg"  ></img>
+            <img id="SVG_E5"   type="image/svg+xml" src="rune_svg/E5.svg"  ></img>
+            <img id="SVG_E5_2" type="image/svg+xml" src="rune_svg/E5_2.svg"></img>
+        </div>
+
+        <h1>Assault Rune Generator</h1><br>
+        
+        <h2>Rune1</h2>
+        <label class="param" for="rune1">Rune1:</label>
+        <select id="rune1">
+            <option value="A0"   class="official_rune"           >ᚠ:FEOH</option>
+            <option value="A2"   class="official_rune"           >ᚢ:UR</option>
+            <option value="A3"   class="unofficial_rune"         >ᚣ:YR&lt;Unofficial&gt;</option>
+            <option value="A6"   class="official_rune"           >ᚦ:THORN</option>
+            <option value="A8"   class="official_rune"           >ᚨ:ANSUZ</option>
+            <option value="A9"   class="official_rune"           >ᚩ:OS</option>
+            <option value="AA"   class="unofficial_rune"         >ᚪ:AC&lt;Unofficial&gt;</option>
+            <option value="B1"   class="official_rune"           >ᚱ:REID</option>
+            <option value="B2"   class="official_rune"           >ᚲ:KAUNA</option>
+            <option value="B3"   class="official_rune"           >ᚳ:CEN</option>
+            <option value="B3_2" class="official_rune"           >ᚳ:CEN2</option>
+            <option value="B7"   class="official_rune"           >ᚷ:GYFU</option>
+            <option value="B8"   class="unofficial_rune"         >ᚸ:GAR&lt;Unofficial&gt;</option>
+            <option value="B9"   class="official_rune"           >ᚹ:WYNN</option>
+            <option value="BB"   class="official_rune"           >ᚻ:HAEGL</option>
+            <option value="BB_2" class="official_rune"           >ᚻ:HAEGL2</option>
+            <option value="BE"   class="official_rune"           >ᚾ:NAUD</option>
+            <option value="C1"   class="official_rune"           >ᛁ:ISS</option>
+            <option value="C4"   class="official_rune"           >ᛄ:GER</option>
+            <option value="C7"   class="unofficial_rune"         >ᛇ:YL&lt;Unofficial&gt;</option>
+            <option value="C8"   class="official_rune"           >ᛈ:PEORTH</option>
+            <option value="C9"   class="official_rune"           >ᛉ:EOLHX</option>
+            <option value="CB"   class="official_rune"           >ᛋ:SIGEL</option>
+            <option value="CB_2" class="official_rune"           >ᛋ:SIGEL2</option>
+            <option value="CF"   class="official_rune"           >ᛏ:TYR</option>
+            <option value="D2"   class="official_rune"           >ᛒ:BEORC</option>
+            <option value="D6"   class="official_rune"           >ᛖ:EH</option>
+            <option value="D7"   class="official_rune"           >ᛗ:MAN</option>
+            <option value="DA"   class="official_rune"           >ᛚ:LOGR</option>
+            <option value="DD"   class="official_rune"   selected>ᛝ:ING</option>
+            <option value="DE"   class="official_rune"           >ᛞ:DAEG</option>
+            <option value="DF"   class="official_rune"           >ᛟ:ETHEL</option>
+            <option value="E0"   class="unofficial_rune"         >ᛠ:EAR&lt;Unofficial&gt;</option>
+            <option value="E1"   class="unofficial_rune"         >ᛡ:IOR&lt;Unofficial&gt;</option>
+            <option value="E2"   class="unofficial_rune"         >ᛢ:CWEORTH&lt;Unofficial&gt;</option>
+            <option value="E3"   class="unofficial_rune"         >ᛣ:CALC&lt;Unofficial&gt;</option>
+            <option value="E4"   class="unofficial_rune"         >ᛤ:CEALC&lt;Unofficial&gt;</option>
+            <option value="E5"   class="unofficial_rune"         >ᛥ:STAN&lt;Unofficial&gt;</option>
+            <option value="E5_2" class="unofficial_rune"         >ᛥ:STAN2&lt;Unofficial&gt;</option>
+        </select><br>
+        
+        <label class="param" for="rune1color">Color:</label>
+        <input id="rune1color" type="color" value="#00ffff"><br>
+
+        <label class="param" for="chkRune1Mirror">Mirror:</label>
+        <input id="chkRune1Mirror" type="checkbox"><br>
+
+        <hr>
+        
+        <h2>Rune2</h2>
+        <label class="param" for="rune2">Rune2:</label>
+        <select id="rune2">
+            <option value="A0"   class="official_rune"           >ᚠ:FEOH</option>
+            <option value="A2"   class="official_rune"           >ᚢ:UR</option>
+            <option value="A3"   class="unofficial_rune"         >ᚣ:YR&lt;Unofficial&gt;</option>
+            <option value="A6"   class="official_rune"           >ᚦ:THORN</option>
+            <option value="A8"   class="official_rune"           >ᚨ:ANSUZ</option>
+            <option value="A9"   class="official_rune"           >ᚩ:OS</option>
+            <option value="AA"   class="unofficial_rune"         >ᚪ:AC&lt;Unofficial&gt;</option>
+            <option value="B1"   class="official_rune"           >ᚱ:REID</option>
+            <option value="B2"   class="official_rune"           >ᚲ:KAUNA</option>
+            <option value="B3"   class="official_rune"           >ᚳ:CEN</option>
+            <option value="B3_2" class="official_rune"           >ᚳ:CEN2</option>
+            <option value="B7"   class="official_rune"   selected>ᚷ:GYFU</option>
+            <option value="B8"   class="unofficial_rune"         >ᚸ:GAR&lt;Unofficial&gt;</option>
+            <option value="B9"   class="official_rune"           >ᚹ:WYNN</option>
+            <option value="BB"   class="official_rune"           >ᚻ:HAEGL</option>
+            <option value="BB_2" class="official_rune"           >ᚻ:HAEGL2</option>
+            <option value="BE"   class="official_rune"           >ᚾ:NAUD</option>
+            <option value="C1"   class="official_rune"           >ᛁ:ISS</option>
+            <option value="C4"   class="official_rune"           >ᛄ:GER</option>
+            <option value="C7"   class="unofficial_rune"         >ᛇ:YL&lt;Unofficial&gt;</option>
+            <option value="C8"   class="official_rune"           >ᛈ:PEORTH</option>
+            <option value="C9"   class="official_rune"           >ᛉ:EOLHX</option>
+            <option value="CB"   class="official_rune"           >ᛋ:SIGEL</option>
+            <option value="CB_2" class="official_rune"           >ᛋ:SIGEL2</option>
+            <option value="CF"   class="official_rune"           >ᛏ:TYR</option>
+            <option value="D2"   class="official_rune"           >ᛒ:BEORC</option>
+            <option value="D6"   class="official_rune"           >ᛖ:EH</option>
+            <option value="D7"   class="official_rune"           >ᛗ:MAN</option>
+            <option value="DA"   class="official_rune"           >ᛚ:LOGR</option>
+            <option value="DD"   class="official_rune"           >ᛝ:ING</option>
+            <option value="DE"   class="official_rune"           >ᛞ:DAEG</option>
+            <option value="DF"   class="official_rune"           >ᛟ:ETHEL</option>
+            <option value="E0"   class="unofficial_rune"         >ᛠ:EAR&lt;Unofficial&gt;</option>
+            <option value="E1"   class="unofficial_rune"         >ᛡ:IOR&lt;Unofficial&gt;</option>
+            <option value="E2"   class="unofficial_rune"         >ᛢ:CWEORTH&lt;Unofficial&gt;</option>
+            <option value="E3"   class="unofficial_rune"         >ᛣ:CALC&lt;Unofficial&gt;</option>
+            <option value="E4"   class="unofficial_rune"         >ᛤ:CEALC&lt;Unofficial&gt;</option>
+            <option value="E5"   class="unofficial_rune"         >ᛥ:STAN&lt;Unofficial&gt;</option>
+            <option value="E5_2" class="unofficial_rune"         >ᛥ:STAN2&lt;Unofficial&gt;</option>
+        </select><br>
+        
+        <label class="param" for="rune2color">Color:</label>
+        <input id="rune2color" type="color" value="#ff00ff"><br>
+
+        <label class="param" for="chkRune2Mirror">Mirror:</label>
+        <input id="chkRune2Mirror" type="checkbox"><br>
+        <hr>
+        
+        <h2>Background</h2>
+        <label class="param" for="bgcolor">Color:</label>
+        <input id="bgcolor" type="color" value="#191970"><br>
+
+        <label class="param" for="lapcolor">Lap. color:</label>
+        <input id="lapcolor" type="color" value="#FFFFFF"><br>
+
+        <label class="param" for="imgSize">Size(px):</label>
+        <input id="imgSize" type="number" value="300">px<br>
+
+        <label class="param" for="chkRealtime">Real time:</label>
+        <input id="chkRealtime" type="checkbox" checked="checked"><br>
+
+        <label class="param" for="chkRealtime">Show unoffice rune:</label>
+        <input id="chkShowUnofficial" type="checkbox" onchange="chkShowUnofficial();"><br>
+        <hr>
+        <br>
+        
+        <h2>Horizontal Position</h2>
+        <input id="radHPosCenter" type="radio" name="radHPos" checked="checked"><label class="param" for="radHPosCenter">Center</label>　
+        <input id="radHPosLeft"   type="radio" name="radHPos">                  <label class="param" for="radHPosLeft"  >Left</label>　
+        <input id="radHPosRight"  type="radio" name="radHPos">                  <label class="param" for="radHPosRight" >Right</label>  
+
+        <hr>
+        <br>
+        <input id="generate" type="button" value="Generate" onclick="return generate_onclick();"><br>
+        
+        <!-- ワークのキャンバス -->
+        <div style="display:none;">
+            <canvas id="rune1Canvas"></canvas>
+            <canvas id="rune2Canvas"></canvas>
+            <canvas id="runeLapCanvas"></canvas>
+        </div>
+        <br>
+        <canvas id="tempCanvas"></canvas>
+        <img id="runeImg">
+    </body>
+</html>
