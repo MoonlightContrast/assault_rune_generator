@@ -45,3 +45,8 @@ Assault rune generatorはブラウザ上で動作します。
 # Note
 非公式ルーンは形状が確定しておりませんので
 仮に将来使用された場合に形状が変わる可能性があります。
+
+# License
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c)j 2022 MoonlightContrast
