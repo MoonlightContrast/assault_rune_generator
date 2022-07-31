@@ -2,196 +2,323 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
         <link href="AssaultRuneGenerator.css" rel="stylesheet">
-        <script src="AssaultRuneGenerator.js"></script>
         
+        <!-- Libraries used
+          -- Vue.js v3
+          -- MIT
+          -- 
+          -- Copyright (c) 2013-present, Yuxi (Evan) You
+          -- 
+          -- ///////////////////////////////////////////
+          -- 
+          -- vue-i18n-next
+          -- The MIT License (MIT)
+          --
+          -- Copyright (c) 2016 kazuya kawaguchi
+          -- 
+          -- ///////////////////////////////////////////
+          -- 
+          -- Bootstrap 5.0.2
+          -- Code and documentation copyright 2011–2021 the Bootstrap Authors and Twitter, Inc. Code released under the MIT License. Docs released under Creative Commons.
+          -- 
+          -- ///////////////////////////////////////////
+          -->
+
+        <!-- Bootstrap回り -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        
+        <!-- Vue.js回り -->
+        <script src="https://unpkg.com/vue@3.2.36"></script>
+        <script src="https://unpkg.com/vue-i18n@9"></script>
+
+
         <title>Assault Rune Generator</title>
     </head>
     <body>
-        
-        <!-- ルーン文字SVG -->
-        <div style="display:none;">
-            <img id="SVG_A0"   type="image/svg+xml" src="rune_svg/A0.svg"  ></img>
-            <img id="SVG_A2"   type="image/svg+xml" src="rune_svg/A2.svg"  ></img>
-            <img id="SVG_A3"   type="image/svg+xml" src="rune_svg/A3.svg"  ></img>
-            <img id="SVG_A6"   type="image/svg+xml" src="rune_svg/A6.svg"  ></img>
-            <img id="SVG_A8"   type="image/svg+xml" src="rune_svg/A8.svg"  ></img>
-            <img id="SVG_A9"   type="image/svg+xml" src="rune_svg/A9.svg"  ></img>
-            <img id="SVG_AA"   type="image/svg+xml" src="rune_svg/AA.svg"  ></img>
-            <img id="SVG_B1"   type="image/svg+xml" src="rune_svg/B1.svg"  ></img>
-            <img id="SVG_B2"   type="image/svg+xml" src="rune_svg/B2.svg"  ></img>
-            <img id="SVG_B3"   type="image/svg+xml" src="rune_svg/B3.svg"  ></img>
-            <img id="SVG_B3_2" type="image/svg+xml" src="rune_svg/B3_2.svg"></img>
-            <img id="SVG_B7"   type="image/svg+xml" src="rune_svg/B7.svg"  ></img>
-            <img id="SVG_B8"   type="image/svg+xml" src="rune_svg/B8.svg"  ></img>
-            <img id="SVG_B9"   type="image/svg+xml" src="rune_svg/B9.svg"  ></img>
-            <img id="SVG_BB"   type="image/svg+xml" src="rune_svg/BB.svg"  ></img>
-            <img id="SVG_BB_2" type="image/svg+xml" src="rune_svg/BB_2.svg"></img>
-            <img id="SVG_BE"   type="image/svg+xml" src="rune_svg/BE.svg"  ></img>
-            <img id="SVG_C1"   type="image/svg+xml" src="rune_svg/C1.svg"  ></img>
-            <img id="SVG_C4"   type="image/svg+xml" src="rune_svg/C4.svg"  ></img>
-            <img id="SVG_C7"   type="image/svg+xml" src="rune_svg/C7.svg"  ></img>
-            <img id="SVG_C8"   type="image/svg+xml" src="rune_svg/C8.svg"  ></img>
-            <img id="SVG_C9"   type="image/svg+xml" src="rune_svg/C9.svg"  ></img>
-            <img id="SVG_CB"   type="image/svg+xml" src="rune_svg/CB.svg"  ></img>
-            <img id="SVG_CB_2" type="image/svg+xml" src="rune_svg/CB_2.svg"></img>
-            <img id="SVG_CF"   type="image/svg+xml" src="rune_svg/CF.svg"  ></img>
-            <img id="SVG_D2"   type="image/svg+xml" src="rune_svg/D2.svg"  ></img>
-            <img id="SVG_D6"   type="image/svg+xml" src="rune_svg/D6.svg"  ></img>
-            <img id="SVG_D7"   type="image/svg+xml" src="rune_svg/D7.svg"  ></img>
-            <img id="SVG_DA"   type="image/svg+xml" src="rune_svg/DA.svg"  ></img>
-            <img id="SVG_DD"   type="image/svg+xml" src="rune_svg/DD.svg"  ></img>
-            <img id="SVG_DE"   type="image/svg+xml" src="rune_svg/DE.svg"  ></img>
-            <img id="SVG_DF"   type="image/svg+xml" src="rune_svg/DF.svg"  ></img>
-            <img id="SVG_E0"   type="image/svg+xml" src="rune_svg/E0.svg"  ></img>
-            <img id="SVG_E1"   type="image/svg+xml" src="rune_svg/E1.svg"  ></img>
-            <img id="SVG_E2"   type="image/svg+xml" src="rune_svg/E2.svg"  ></img>
-            <img id="SVG_E3"   type="image/svg+xml" src="rune_svg/E3.svg"  ></img>
-            <img id="SVG_E4"   type="image/svg+xml" src="rune_svg/E4.svg"  ></img>
-            <img id="SVG_E5"   type="image/svg+xml" src="rune_svg/E5.svg"  ></img>
-            <img id="SVG_E5_2" type="image/svg+xml" src="rune_svg/E5_2.svg"></img>
+        <div id="body">
+
+            <!-- ルーン文字SVG -->
+            <div style="display:none;">
+                <img id="SVG_A0"   ref="SVG_A0"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/A0.svg"   />
+                <img id="SVG_A2"   ref="SVG_A2"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/A2.svg"   />
+                <img id="SVG_A3"   ref="SVG_A3"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/A3.svg"   />
+                <img id="SVG_A6"   ref="SVG_A6"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/A6.svg"   />
+                <img id="SVG_A8"   ref="SVG_A8"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/A8.svg"   />
+                <img id="SVG_A9"   ref="SVG_A9"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/A9.svg"   />
+                <img id="SVG_AA"   ref="SVG_AA"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/AA.svg"   />
+                <img id="SVG_B1"   ref="SVG_B1"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/B1.svg"   />
+                <img id="SVG_B2"   ref="SVG_B2"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/B2.svg"   />
+                <img id="SVG_B3"   ref="SVG_B3"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/B3.svg"   />
+                <img id="SVG_B3_2" ref="SVG_B3_2" type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/B3_2.svg" />
+                <img id="SVG_B7"   ref="SVG_B7"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/B7.svg"   />
+                <img id="SVG_B8"   ref="SVG_B8"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/B8.svg"   />
+                <img id="SVG_B9"   ref="SVG_B9"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/B9.svg"   />
+                <img id="SVG_BB"   ref="SVG_BB"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/BB.svg"   />
+                <img id="SVG_BB_2" ref="SVG_BB_2" type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/BB_2.svg" />
+                <img id="SVG_BE"   ref="SVG_BE"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/BE.svg"   />
+                <img id="SVG_C1"   ref="SVG_C1"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/C1.svg"   />
+                <img id="SVG_C4"   ref="SVG_C4"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/C4.svg"   />
+                <img id="SVG_C7"   ref="SVG_C7"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/C7.svg"   />
+                <img id="SVG_C8"   ref="SVG_C8"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/C8.svg"   />
+                <img id="SVG_C9"   ref="SVG_C9"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/C9.svg"   />
+                <img id="SVG_CB"   ref="SVG_CB"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/CB.svg"   />
+                <img id="SVG_CB_2" ref="SVG_CB_2" type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/CB_2.svg" />
+                <img id="SVG_CF"   ref="SVG_CF"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/CF.svg"   />
+                <img id="SVG_D2"   ref="SVG_D2"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/D2.svg"   />
+                <img id="SVG_D6"   ref="SVG_D6"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/D6.svg"   />
+                <img id="SVG_D7"   ref="SVG_D7"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/D7.svg"   />
+                <img id="SVG_DA"   ref="SVG_DA"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/DA.svg"   />
+                <img id="SVG_DD"   ref="SVG_DD"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/DD.svg"   />
+                <img id="SVG_DE"   ref="SVG_DE"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/DE.svg"   />
+                <img id="SVG_DF"   ref="SVG_DF"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/DF.svg"   />
+                <img id="SVG_E0"   ref="SVG_E0"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/E0.svg"   />
+                <img id="SVG_E1"   ref="SVG_E1"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/E1.svg"   />
+                <img id="SVG_E2"   ref="SVG_E2"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/E2.svg"   />
+                <img id="SVG_E3"   ref="SVG_E3"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/E3.svg"   />
+                <img id="SVG_E4"   ref="SVG_E4"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/E4.svg"   />
+                <img id="SVG_E5"   ref="SVG_E5"   type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/E5.svg"   />
+                <img id="SVG_E5_2" ref="SVG_E5_2" type="image/svg+xml" crossOrigin="anonymous" src="rune_svg/E5_2.svg" />
+            </div>
+
+            <div class="container">
+
+                <!-- タイトル -->
+                <div class="row mb-3"><div class="col">
+                <h4 class="display-4">{{$t('label.title')}}</h4><br>
+                </div></div>
+
+                <div class="row mb-3">
+                    <div class="col-md">
+
+                        <!-- ルーン1 -->
+                        <div class="accordion" id="rune1accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading1">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                        {{$t('label.rune1')}}&nbsp;
+                                        <span class="text-muted">
+                                            [
+                                            {{showSelectedRuneText(rune1.selected)}}&nbsp;
+                                            <span class="sampleColor" :style.camel="{ backgroundColor: rune1.color }"></span>&nbsp;
+                                            {{rune1.isMirror ? $t('label.mirror') : ''}}
+                                            ]
+                                        </span>
+                                    </button>
+                                </h2>
+                                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#rune1accordion">
+                                    <div class="accordion-body">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="rune1">{{$t('label.rune1')}}:</label>
+                                            <select id="rune1" class="form-select" v-model="rune1.selected" v-on:change="onchange_input">
+                                                <option v-for="rune in runeChars" :value="rune.value" v-show="judgeShowRune(rune)">
+                                                    {{rune.text}}
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label" for="rune1color">{{$t('label.color')}}:</label>
+                                            <input id="rune1color" type="color" class="form-control form-control-color" v-model="rune1.color" v-on:change="onchange_input">
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input id="chkRune1Mirror" type="checkbox" class="form-check-input" v-model="rune1.isMirror" v-on:change="onchange_input">
+                                            <label for="chkRune1Mirror" class="form-check-label">{{$t('label.mirror')}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{rune1.selected.text}}
+                        </div>
+                    </div>
+                    <div class="col-md">
+
+                        <!-- ルーン2 -->
+                        <div class="accordion" id="rune2accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading2">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                        {{$t('label.rune2')}}&nbsp;
+                                        <span class="text-muted">
+                                            [
+                                            {{showSelectedRuneText(rune2.selected)}}&nbsp;
+                                            <span class="sampleColor" :style.camel="{ backgroundColor: rune2.color }"></span>&nbsp;
+                                            {{rune2.isMirror ? $t('label.mirror') : ''}}
+                                            ]
+                                        </span>
+                                    </button>
+                                </h2>
+                                <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading2" data-bs-parent="#rune2accordion">
+                                    <div class="accordion-body">
+                                        <div class="mb-3">
+                                            <label class="param" for="rune2">{{$t('label.rune2')}}:</label>
+                                            <select id="rune2" class="form-select" v-model="rune2.selected" v-on:change="onchange_input">
+                                                <option v-for="rune in runeChars" :value="rune.value" v-show="judgeShowRune(rune)">
+                                                    {{rune.text}}
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label" for="rune2color">{{$t('label.color')}}:</label>
+                                            <input id="rune2color" type="color" class="form-control form-control-color" v-model="rune2.color" v-on:change="onchange_input">
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input id="chkRune2Mirror" type="checkbox" class="form-check-input" v-model="rune2.isMirror" v-on:change="onchange_input">
+                                            <label for="chkRune2Mirror" class="form-check-label">{{$t('label.mirror')}}:</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md">
+
+                        <!-- 背景設定周り -->
+                        <div class="accordion" id="backgroundAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                        {{$t('label.background')}}&nbsp;
+                                        <span class="text-muted">
+                                            [
+                                            <span class="sampleColor" :style.camel="{ backgroundColor: bgcolor  }"></span>&nbsp;
+                                            <span class="sampleColor" :style.camel="{ backgroundColor: lapcolor }"></span>&nbsp;
+                                            {{imgSize}}px&nbsp;
+                                            {{isRealtime     ? $t('label.realTime')       : ''}}&nbsp;
+                                            {{showUnofficial ? $t('label.unofficialRune') : ''}}
+                                            ]
+                                        </span>
+                                    </button>
+                                </h2>
+                                <div id="collapse3" ref="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#backgroundAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-flex flex-row">
+                                            <div class="mb-3 p-2">
+                                                <label class="form-label" for="bgcolor">{{$t('label.backgroundColor')}}:</label>
+                                                <input id="bgcolor" type="color" class="form-control form-control-color" v-model="bgcolor" v-on:change="onchange_input">
+                                            </div>
+
+                                            <div class="mb-3 p-2">
+                                                <label class="form-label" for="lapcolor">{{$t('label.lapColor')}}:</label>
+                                                <input id="lapcolor" type="color" class="form-control form-control-color" v-model="lapcolor" v-on:change="onchange_input">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label" for="imgSize">{{$t('label.size')}}:</label>
+                                            <input id="imgSize" type="number" :min="MINIMUM_IMAGE_SIZE" max="1000" class="form-control"
+                                                   v-bind:class="{'is-invalid': invalidImgSize}" placeholder="pixels" v-model="imgSize" v-on:change="onchange_input">
+                                            <div class="invalid-feedback">
+                                                {{$t("message.sizeInvalid", { miniPix: MINIMUM_IMAGE_SIZE, })}}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input id="chkRealtime" type="checkbox" class="form-check-input" v-model="isRealtime">
+                                            <label class="form-check-label" for="chkRealtime">{{$t('label.realTime')}}</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input id="chkShowUnofficial" type="checkbox" class="form-check-input" v-model="showUnofficial">
+                                            <label class="form-check-label" for="chkShowUnofficial">{{$t('label.unofficialRune')}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md">
+
+                        <div class="accordion" id="hPosAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                        {{$t('label.horizontalPos')}}&nbsp;
+                                        <span class="text-muted">
+                                            [
+                                            {{radHPos == 'left'   ? $t('label.left')   : ''}}
+                                            {{radHPos == 'center' ? $t('label.center') : ''}}
+                                            {{radHPos == 'right'  ? $t('label.right')  : ''}}
+                                            ]
+                                        </span>
+                                    </button>
+                                </h2>
+                                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#hPosAccordion">
+                                    <div class="accordion-body">
+                                        <div class="btn-group" role="group">
+                                            <input id="radHPosLeft" type="radio" name="radHPos" class="btn-check" v-model="radHPos" value="left" v-on:change="onchange_input">
+                                            <label class="btn btn-outline-primary" for="radHPosLeft">{{$t('label.left')}}</label>
+
+                                            <input id="radHPosCenter" type="radio" name="radHPos" class="btn-check" v-model="radHPos" value="center" v-on:change="onchange_input">
+                                            <label class="btn btn-outline-primary" for="radHPosCenter">{{$t('label.center')}}</label>
+
+                                            <input id="radHPosRight" type="radio" name="radHPos" class="btn-check" v-model="radHPos" value="right" v-on:change="onchange_input">
+                                            <label class="btn btn-outline-primary" for="radHPosRight">{{$t('label.right')}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 生成ボタン -->
+                <div class="row mb-3"><div class="col">
+                    <input id="generate" type="button" :value="$t('label.generate')" class="btn btn-primary" v-on:click="generate_onclick"><br>
+                </div></div>
+
+                <!-- 生成された画像表示部 -->
+                <div class="row mb-3">
+
+                    <div class="col">
+                        <div class="d-flex flex-row">
+
+                            <!-- ラスター画像側 -->
+                            <div>
+
+                                <!-- ワークのキャンバス -->
+                                <div style="display:none;">
+                                    <canvas id="rune1Canvas"   ref="rune1Canvas"></canvas>
+                                    <canvas id="rune2Canvas"   ref="rune2Canvas"></canvas>
+                                    <canvas id="runeLapCanvas" ref="runeLapCanvas"></canvas>
+                                    <canvas id="tempCanvas"    ref="tempCanvas"></canvas>
+                                </div>
+
+                                <div class="card" :style="{ width: compImageSize + 'px' }">
+                                    <div class="card-body">
+                                        <span class="card-text">{{$t('label.rasterImage')}}</span>
+                                    </div>
+                                    <img id="tempCanvas2" ref="tempCanvas2" :style="{ height: compImageSize + 'px' }" class="card-img-bottom">
+                                </div>
+                            </div>
+
+                            <!-- SVG側 -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <h1>Assault Rune Generator</h1><br>
-        
-        <h2>Rune1</h2>
-        <label class="param" for="rune1">Rune1:</label>
-        <select id="rune1" onchange="onchange_input();">
-            <option value="A0"   class="official_rune"           >ᚠ:FEOH</option>
-            <option value="A2"   class="official_rune"           >ᚢ:UR</option>
-            <option value="A3"   class="unofficial_rune"         >ᚣ:YR&lt;Unofficial&gt;</option>
-            <option value="A6"   class="official_rune"           >ᚦ:THORN</option>
-            <option value="A8"   class="official_rune"           >ᚨ:ANSUZ</option>
-            <option value="A9"   class="official_rune"           >ᚩ:OS</option>
-            <option value="AA"   class="unofficial_rune"         >ᚪ:AC&lt;Unofficial&gt;</option>
-            <option value="B1"   class="official_rune"           >ᚱ:REID</option>
-            <option value="B2"   class="official_rune"           >ᚲ:KAUNA</option>
-            <option value="B3"   class="official_rune"           >ᚳ:CEN</option>
-            <option value="B3_2" class="official_rune"           >ᚳ:CEN2</option>
-            <option value="B7"   class="official_rune"           >ᚷ:GYFU</option>
-            <option value="B8"   class="unofficial_rune"         >ᚸ:GAR&lt;Unofficial&gt;</option>
-            <option value="B9"   class="official_rune"           >ᚹ:WYNN</option>
-            <option value="BB"   class="official_rune"           >ᚻ:HAEGL</option>
-            <option value="BB_2" class="official_rune"           >ᚻ:HAEGL2</option>
-            <option value="BE"   class="official_rune"           >ᚾ:NAUD</option>
-            <option value="C1"   class="official_rune"           >ᛁ:ISS</option>
-            <option value="C4"   class="official_rune"           >ᛄ:GER</option>
-            <option value="C7"   class="unofficial_rune"         >ᛇ:YL&lt;Unofficial&gt;</option>
-            <option value="C8"   class="official_rune"           >ᛈ:PEORTH</option>
-            <option value="C9"   class="official_rune"           >ᛉ:EOLHX</option>
-            <option value="CB"   class="official_rune"           >ᛋ:SIGEL</option>
-            <option value="CB_2" class="official_rune"           >ᛋ:SIGEL2</option>
-            <option value="CF"   class="official_rune"           >ᛏ:TYR</option>
-            <option value="D2"   class="official_rune"           >ᛒ:BEORC</option>
-            <option value="D6"   class="official_rune"           >ᛖ:EH</option>
-            <option value="D7"   class="official_rune"           >ᛗ:MAN</option>
-            <option value="DA"   class="official_rune"           >ᛚ:LOGR</option>
-            <option value="DD"   class="official_rune"   selected>ᛝ:ING</option>
-            <option value="DE"   class="official_rune"           >ᛞ:DAEG</option>
-            <option value="DF"   class="official_rune"           >ᛟ:ETHEL</option>
-            <option value="E0"   class="unofficial_rune"         >ᛠ:EAR&lt;Unofficial&gt;</option>
-            <option value="E1"   class="unofficial_rune"         >ᛡ:IOR&lt;Unofficial&gt;</option>
-            <option value="E2"   class="unofficial_rune"         >ᛢ:CWEORTH&lt;Unofficial&gt;</option>
-            <option value="E3"   class="unofficial_rune"         >ᛣ:CALC&lt;Unofficial&gt;</option>
-            <option value="E4"   class="unofficial_rune"         >ᛤ:CEALC&lt;Unofficial&gt;</option>
-            <option value="E5"   class="unofficial_rune"         >ᛥ:STAN&lt;Unofficial&gt;</option>
-            <option value="E5_2" class="unofficial_rune"         >ᛥ:STAN2&lt;Unofficial&gt;</option>
-        </select><br>
-        
-        <label class="param" for="rune1color">Color:</label>
-        <input id="rune1color" type="color" value="#00ffff" onchange="onchange_input();"><br>
-
-        <label class="param" for="chkRune1Mirror">Mirror:</label>
-        <input id="chkRune1Mirror" type="checkbox" onchange="onchange_input();"><br>
-
-        <hr>
-        
-        <h2>Rune2</h2>
-        <label class="param" for="rune2">Rune2:</label>
-        <select id="rune2" onchange="onchange_input();">
-            <option value="A0"   class="official_rune"           >ᚠ:FEOH</option>
-            <option value="A2"   class="official_rune"           >ᚢ:UR</option>
-            <option value="A3"   class="unofficial_rune"         >ᚣ:YR&lt;Unofficial&gt;</option>
-            <option value="A6"   class="official_rune"           >ᚦ:THORN</option>
-            <option value="A8"   class="official_rune"           >ᚨ:ANSUZ</option>
-            <option value="A9"   class="official_rune"           >ᚩ:OS</option>
-            <option value="AA"   class="unofficial_rune"         >ᚪ:AC&lt;Unofficial&gt;</option>
-            <option value="B1"   class="official_rune"           >ᚱ:REID</option>
-            <option value="B2"   class="official_rune"           >ᚲ:KAUNA</option>
-            <option value="B3"   class="official_rune"           >ᚳ:CEN</option>
-            <option value="B3_2" class="official_rune"           >ᚳ:CEN2</option>
-            <option value="B7"   class="official_rune"   selected>ᚷ:GYFU</option>
-            <option value="B8"   class="unofficial_rune"         >ᚸ:GAR&lt;Unofficial&gt;</option>
-            <option value="B9"   class="official_rune"           >ᚹ:WYNN</option>
-            <option value="BB"   class="official_rune"           >ᚻ:HAEGL</option>
-            <option value="BB_2" class="official_rune"           >ᚻ:HAEGL2</option>
-            <option value="BE"   class="official_rune"           >ᚾ:NAUD</option>
-            <option value="C1"   class="official_rune"           >ᛁ:ISS</option>
-            <option value="C4"   class="official_rune"           >ᛄ:GER</option>
-            <option value="C7"   class="unofficial_rune"         >ᛇ:YL&lt;Unofficial&gt;</option>
-            <option value="C8"   class="official_rune"           >ᛈ:PEORTH</option>
-            <option value="C9"   class="official_rune"           >ᛉ:EOLHX</option>
-            <option value="CB"   class="official_rune"           >ᛋ:SIGEL</option>
-            <option value="CB_2" class="official_rune"           >ᛋ:SIGEL2</option>
-            <option value="CF"   class="official_rune"           >ᛏ:TYR</option>
-            <option value="D2"   class="official_rune"           >ᛒ:BEORC</option>
-            <option value="D6"   class="official_rune"           >ᛖ:EH</option>
-            <option value="D7"   class="official_rune"           >ᛗ:MAN</option>
-            <option value="DA"   class="official_rune"           >ᛚ:LOGR</option>
-            <option value="DD"   class="official_rune"           >ᛝ:ING</option>
-            <option value="DE"   class="official_rune"           >ᛞ:DAEG</option>
-            <option value="DF"   class="official_rune"           >ᛟ:ETHEL</option>
-            <option value="E0"   class="unofficial_rune"         >ᛠ:EAR&lt;Unofficial&gt;</option>
-            <option value="E1"   class="unofficial_rune"         >ᛡ:IOR&lt;Unofficial&gt;</option>
-            <option value="E2"   class="unofficial_rune"         >ᛢ:CWEORTH&lt;Unofficial&gt;</option>
-            <option value="E3"   class="unofficial_rune"         >ᛣ:CALC&lt;Unofficial&gt;</option>
-            <option value="E4"   class="unofficial_rune"         >ᛤ:CEALC&lt;Unofficial&gt;</option>
-            <option value="E5"   class="unofficial_rune"         >ᛥ:STAN&lt;Unofficial&gt;</option>
-            <option value="E5_2" class="unofficial_rune"         >ᛥ:STAN2&lt;Unofficial&gt;</option>
-        </select><br>
-        
-        <label class="param" for="rune2color">Color:</label>
-        <input id="rune2color" type="color" value="#ff00ff" onchange="onchange_input();"><br>
-
-        <label class="param" for="chkRune2Mirror">Mirror:</label>
-        <input id="chkRune2Mirror" type="checkbox" onchange="onchange_input();"><br>
-        <hr>
-        
-        <h2>Background</h2>
-        <label class="param" for="bgcolor">Color:</label>
-        <input id="bgcolor" type="color" value="#191970" onchange="onchange_input();"><br>
-
-        <label class="param" for="lapcolor">Lap. color:</label>
-        <input id="lapcolor" type="color" value="#FFFFFF" onchange="onchange_input();"><br>
-
-        <label class="param" for="imgSize">Size(px):</label>
-        <input id="imgSize" type="number" value="300" min="50" max="1000" onchange="onchange_input();">px<br>
-
-        <label class="param" for="chkRealtime">Real time:</label>
-        <input id="chkRealtime" type="checkbox" checked="checked"><br>
-
-        <label class="param" for="chkRealtime">Show unoffice rune:</label>
-        <input id="chkShowUnofficial" type="checkbox" onchange="chkShowUnofficial();"><br>
-        <hr>
-        <br>
-        
-        <h2>Horizontal Position</h2>
-        <input id="radHPosCenter" type="radio" name="radHPos" onchange="onchange_input();" checked="checked"><label class="param" for="radHPosCenter">Center</label>　
-        <input id="radHPosLeft"   type="radio" name="radHPos" onchange="onchange_input();">                  <label class="param" for="radHPosLeft"  >Left</label>　
-        <input id="radHPosRight"  type="radio" name="radHPos" onchange="onchange_input();">                  <label class="param" for="radHPosRight" >Right</label>  
-
-        <hr>
-        <br>
-        <input id="generate" type="button" value="Generate" onclick="return generate_onclick();"><br>
-        
-        <!-- ワークのキャンバス -->
-        <div style="display:none;">
-            <canvas id="rune1Canvas"></canvas>
-            <canvas id="rune2Canvas"></canvas>
-            <canvas id="runeLapCanvas"></canvas>
-        </div>
-        <br>
-        <canvas id="tempCanvas"></canvas>
-        <img id="runeImg">
+        <footer class="d-flex flex-row mb-3 justify-content-center">
+            <div>
+                Source code MIT Licenced  Copyright (c) 2022 MoonlightContrast Assault Rune Generator is open source software <a class="link-primary" href="https://github.com/MoonlightContrast/assault_rune_generator">GitHub</a>
+            </div>
+        </footer>
     </body>
+    <script src="AssaultRuneGenerator.js"></script>
 </html>

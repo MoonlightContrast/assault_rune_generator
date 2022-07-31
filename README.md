@@ -49,4 +49,4 @@ Assault rune generatorはブラウザ上で動作します。
 # License
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c)j 2022 MoonlightContrast
+Copyright (c) 2022 MoonlightContrast
