@@ -340,10 +340,23 @@ const appData = {
             toggle: false
         });
 
-        // TODO : // 初期表示用に生成ボタン押下
-        // TODO : this.$nextTick(function () {
-        // TODO :     this.generate_onclick();
-        // TODO : });
+        // 1文字目と2文字目のルーンのSVGを特定
+        const rune1ele = runeChars[this.rune1.selected];        // ルーン1文字目の文字
+        const rune2ele = runeChars[this.rune2.selected];        // ルーン2文字目の文字
+        const appDataThis = this;
+        rune1ele.originSrc = rune1ele.src;                      // ルーン画像1のオリジナルsrcを退避
+        rune2ele.originSrc = rune2ele.src;                      // ルーン画像2のオリジナルsrcを退避
+        rune1ele.src       = "";                                // ルーン画像1のオリジナルsrcをクリア(後ほど再度読み込む)
+        rune2ele.src       = "";                                // ルーン画像2のオリジナルsrcをクリア(後ほど再度読み込む)
+        rune1ele.addEventListener('load', function () {         // ルーン1文字目読み込み完了時
+            rune2ele.addEventListener('load', function () {     // ルーン2文字目読み込み完了時
+
+                // 初期表示用に生成ボタン押下
+                appDataThis.generate_onclick();
+            });
+            rune2ele.src = rune2ele.originSrc;                  // ルーン画像2のsrcを再設定して再読み込みする
+        });
+        rune1ele.src = rune1ele.originSrc;                      // ルーン画像1のsrcを再設定して再読み込みする
     },
 
     /** 算出プロパティ */
